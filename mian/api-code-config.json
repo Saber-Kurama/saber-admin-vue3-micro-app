@@ -1,0 +1,8 @@
+{
+  "originUrl": "https://nextjs-demo-six-alpha.vercel.app/api/doc",
+  "docUrl": "https://nextjs-demo-six-alpha.vercel.app/api-doc",
+  "outDir": "./src/api",
+  "usingOperationId": false,
+  "surrounding": "typeScript",
+  "templateType": "http"
+}
