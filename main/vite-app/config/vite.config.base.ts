@@ -34,9 +34,7 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         modifyVars: {
-          hack: `true; @import (reference) "${resolve(
-            'src/assets/style/breakpoint.less'
-          )}";`,
+          hack: `true; @import (reference) "${resolve('src/styles/breakpoint.less')}";`,
         },
         javascriptEnabled: true,
       },

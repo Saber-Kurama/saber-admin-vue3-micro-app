@@ -8,7 +8,7 @@ import directive from './directive';
 import './mock';
 import App from './App.vue';
 import '@arco-design/web-vue/dist/arco.css';
-import '@/assets/styles/index.less';
+import '@/styles/index.less';
 
 const app = createApp(App);
 
