@@ -2,116 +2,138 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="https://unpkg.byted-static.com/latest/byted/arco-config/assets/favicon.ico"
-    />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arco Design Pro - 开箱即用的中台前端/设计解决方案</title>
+    <title><%= title %></title>
   </head>
   <body>
     <div id="app">
       <style>
-        .first-loading-wrap {
+        .app-loading {
           display: flex;
           width: 100%;
-          height: 100vh;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          background: #f0f2f5;
+        }
+
+        .app-loading .app-loading-wrap {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          display: flex;
+          -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
           justify-content: center;
           align-items: center;
           flex-direction: column;
         }
 
-        .first-loading-wrap > h1 {
-          font-size: 128px;
+        .app-loading .app-loading-title {
+          margin-bottom: 30px;
+          font-size: 20px;
+          font-weight: bold;
+          text-align: center;
         }
 
-        .first-loading-wrap .loading-wrap {
-          padding: 98px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        .app-loading .app-loading-logo {
+          width: 100px;
+          margin: 0 auto 15px auto;
         }
 
-        .dot {
-          animation: antRotate 1.2s infinite linear;
-          transform: rotate(45deg);
+        .app-loading .app-loading-item {
           position: relative;
           display: inline-block;
-          font-size: 32px;
-          width: 32px;
-          height: 32px;
-          box-sizing: border-box;
+          width: 60px;
+          height: 60px;
+          vertical-align: middle;
+          border-radius: 50%;
         }
 
-        .dot i {
-          width: 14px;
-          height: 14px;
+        .app-loading .app-loading-outter {
           position: absolute;
-          display: block;
-          background-color: #1890ff;
-          border-radius: 100%;
-          transform: scale(0.75);
-          transform-origin: 50% 50%;
-          opacity: 0.3;
-          animation: antSpinMove 1s infinite linear alternate;
+          width: 100%;
+          height: 100%;
+          border: 4px solid #2d8cf0;
+          border-bottom: 0;
+          border-left-color: transparent;
+          border-radius: 50%;
+          animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
         }
 
-        .dot i:nth-child(1) {
-          top: 0;
-          left: 0;
+        .app-loading .app-loading-inner {
+          position: absolute;
+          top: calc(50% - 20px);
+          left: calc(50% - 20px);
+          width: 40px;
+          height: 40px;
+          border: 4px solid #87bdff;
+          border-right: 0;
+          border-top-color: transparent;
+          border-radius: 50%;
+          animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
         }
 
-        .dot i:nth-child(2) {
-          top: 0;
-          right: 0;
-          -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-        }
+        @-webkit-keyframes loader-outter {
+          0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+          }
 
-        .dot i:nth-child(3) {
-          right: 0;
-          bottom: 0;
-          -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
-        }
-
-        .dot i:nth-child(4) {
-          bottom: 0;
-          left: 0;
-          -webkit-animation-delay: 1.2s;
-          animation-delay: 1.2s;
-        }
-
-        @keyframes antRotate {
-          to {
-            -webkit-transform: rotate(405deg);
-            transform: rotate(405deg);
+          100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
           }
         }
 
-        @-webkit-keyframes antRotate {
-          to {
-            -webkit-transform: rotate(405deg);
-            transform: rotate(405deg);
+        @keyframes loader-outter {
+          0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+          }
+
+          100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
           }
         }
 
-        @keyframes antSpinMove {
-          to {
-            opacity: 1;
+        @-webkit-keyframes loader-inner {
+          0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+          }
+
+          100% {
+            -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
           }
         }
 
-        @-webkit-keyframes antSpinMove {
-          to {
-            opacity: 1;
+        @keyframes loader-inner {
+          0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+          }
+
+          100% {
+            -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
           }
         }
       </style>
-      <div class="first-loading-wrap">
-        <div class="loading-wrap">
-          <span class="dot dot-spin"><i></i><i></i><i></i><i></i></span>
+      <div class="app-loading">
+        <div class="app-loading-wrap">
+          <div class="app-loading-title">
+            <img src="/logo.png" class="app-loading-logo" alt="Logo" />
+            <div class="app-loading-title"><%= title %></div>
+          </div>
+          <div class="app-loading-item">
+            <div class="app-loading-outter"></div>
+            <div class="app-loading-inner"></div>
+          </div>
         </div>
       </div>
     </div>

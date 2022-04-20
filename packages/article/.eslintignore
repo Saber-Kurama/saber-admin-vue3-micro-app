@@ -1,4 +1,8 @@
-/*.json
+/build/
+/config/
+/dist/
 /*.js
-dist
-/src/api/**
+/test/unit/coverage/
+/node_modules/*
+/dist*
+/src/main.ts
